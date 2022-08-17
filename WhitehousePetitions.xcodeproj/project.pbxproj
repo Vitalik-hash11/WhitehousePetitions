@@ -14,6 +14,7 @@
 		DDCBA82528AACDC000FD3378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCBA82428AACDC000FD3378 /* Assets.xcassets */; };
 		DDCBA82828AACDC000FD3378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCBA82628AACDC000FD3378 /* LaunchScreen.storyboard */; };
 		DDCBA83128AAD57700FD3378 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCBA83028AAD57700FD3378 /* Petition.swift */; };
+		DDE0D9D028AD7342003E1C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D9CF28AD7342003E1C65 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DDCBA82728AACDC000FD3378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDCBA82928AACDC000FD3378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCBA83028AAD57700FD3378 /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
+		DDE0D9CF28AD7342003E1C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				DDCBA82F28AACE3300FD3378 /* SupportingFiles */,
 				DDCBA81F28AACDBC00FD3378 /* ViewController.swift */,
+				DDE0D9CF28AD7342003E1C65 /* DetailViewController.swift */,
 				DDCBA83028AAD57700FD3378 /* Petition.swift */,
 				DDCBA82128AACDBC00FD3378 /* Main.storyboard */,
 				DDCBA82428AACDC000FD3378 /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 			files = (
 				DDCBA82028AACDBC00FD3378 /* ViewController.swift in Sources */,
 				DDCBA83128AAD57700FD3378 /* Petition.swift in Sources */,
+				DDE0D9D028AD7342003E1C65 /* DetailViewController.swift in Sources */,
 				DDCBA81C28AACDBC00FD3378 /* AppDelegate.swift in Sources */,
 				DDCBA81E28AACDBC00FD3378 /* SceneDelegate.swift in Sources */,
 			);
