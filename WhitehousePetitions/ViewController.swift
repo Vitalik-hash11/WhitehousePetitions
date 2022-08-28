@@ -29,16 +29,20 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Info", style: .plain, target: self, action: #selector(showInfo))
 
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                parse(json: data)
-                filteredData = petitions
-                tableView.reloadData()
-                return
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    self?.parse(json: data)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.tableView.reloadData()
+                    }
+                    return
+                }
             }
+            
+            self?.showConnectionError()
         }
         
-        showConnectionError()
     }
     
     // MARK: - Search Bar Delegation
@@ -82,14 +86,17 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
     
     private func showConnectionError() {
-        let ac = UIAlertController(title: "Something went wrong!", message: "Try a bit later", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            let ac = UIAlertController(title: "Something went wrong!", message: "Try a bit later", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self?.present(ac, animated: true)
+        }
     }
     
     private func parse(json: Data) {
         if let petitionResult = try? JSONDecoder().decode(PetitionResult.self, from: json) {
             petitions = petitionResult.results
+            filteredData = petitions
         }
     }
 }
